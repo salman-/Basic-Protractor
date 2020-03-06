@@ -1,5 +1,5 @@
 # Basic-Protractor
 
 ## How to run?
-
-`npm run test`
+1. `npm install`
+2. `npm run test`
