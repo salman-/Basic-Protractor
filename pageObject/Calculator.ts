@@ -7,10 +7,10 @@ export class Calculator{
     operator:     ElementFinder;
     goButton:     ElementFinder;
     result:       ElementFinder;
+    url =         'http://www.way2automation.com/angularjs-protractor/calc/';
 
 constructor(){
 
-    browser.get('http://www.way2automation.com/angularjs-protractor/calc/');
     this.firstOperand = element(by.model('first'));
     this.secodOperand = element(by.model('second'));
     this.operator     = element(by.model('operator'));
@@ -19,26 +19,37 @@ constructor(){
 }
 
 
-fillOperands(firstValue:number, secondValue:number){
+fillOperands(firstValue:string, secondValue:string){
 
     this.firstOperand.sendKeys(firstValue);
     this.secodOperand.sendKeys(secondValue);
+    browser.driver.sleep(10000);
 }
 
-selectOperator(operator:string){
+async selectOperator(operation:string){
 
-    if(operator === '+' )
-       console.log('Plus');
-    if(operator === '-' )
-       console.log('Minus');
-    if(operator === '+' )
-       console.log('Multiply');
-    if(operator === '+' )
-       console.log('Devision');
+    if(operation === '+' )
+       await  this.operator.sendKeys('+');
+    if(operation === '-' )
+       await  this.operator.sendKeys('-');
+    if(operation === '*' )
+       await   this.operator.sendKeys('*');
+    if(operation === '/' )
+       await  this.operator.sendKeys('+');
+
+    console.log('operator is: '+operation);
+    //browser.sleep(10000);
 }
 
 clickOnGoButton(){
     this.goButton.click();
 }
+
+ loadPage(){
+    browser.get(this.url);
+    browser.waitForAngular();
+
+}
+
 
 }

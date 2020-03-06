@@ -12,7 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "protractor": "~5.4.3",
+    "protractor": "^5.4.2",
     "typescript": "~3.8.3",
     "ts-node": "^3.0.2",
     "@types/node": "~13.7.7",
