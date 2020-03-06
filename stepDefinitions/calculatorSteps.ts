@@ -1,9 +1,11 @@
+import {browser, element, by, By, $, $$, ExpectedConditions, ElementFinder} from 'protractor';
 import{Given,When,Then} from 'cucumber';
 import { Calculator } from "../pageObject/calculator";
 let calc;
 
   Given('I am in calculator website', function () {
-    calc = new Calculator();
+   // calc = new Calculator();
+    browser.get('http://www.way2automation.com/angularjs-protractor/calc/');
   });
 
 

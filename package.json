@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "protractor JSFiles/configuration.js",
+    "test": "protractor JSFiles/protractor.configuration.js",
     "pretest": "tsc",
     "protractor": "./node_modules/protractor/built/cli.js",
     "webdriver-update": "./node_modules/.bin/webdriver-manager update"
