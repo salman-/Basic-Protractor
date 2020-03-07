@@ -1,4 +1,7 @@
 import {browser, element, by, By, $, $$, ExpectedConditions, ElementFinder} from 'protractor';
+import chai from 'chai';
+
+var expect = chai.expect;
 
 export class Calculator{
 
@@ -49,9 +52,10 @@ async loadPage(){
     await browser.waitForAngular();
 }
 
-async getResult(){
-    await this.result.getText().then((result)=>{
-        console.log("Result is: "+result); 
+async getResult(expectedResult){
+    await this.result.getText().then((actualResult)=>{
+        console.log("Result is: "+actualResult); 
+        expect(actualResult).to.equal(expectedResult);
     })
 }
 
