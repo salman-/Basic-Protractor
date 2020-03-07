@@ -19,37 +19,40 @@ constructor(){
 }
 
 
-fillOperands(firstValue:string, secondValue:string){
+async fillOperands(firstValue:string, secondValue:string){
 
-    this.firstOperand.sendKeys(firstValue);
-    this.secodOperand.sendKeys(secondValue);
-    browser.driver.sleep(10000);
+    await this.firstOperand.sendKeys(firstValue).then(()=>{
+        console.log("First operand: "+firstValue);
+    });
+    await this.secodOperand.sendKeys(secondValue).then(()=>{
+        console.log("Second operand: "+secondValue);
+    });;
 }
 
 async selectOperator(operation:string){
 
-    if(operation === '+' )
-       await  this.operator.sendKeys('+');
-    if(operation === '-' )
-       await  this.operator.sendKeys('-');
-    if(operation === '*' )
-       await   this.operator.sendKeys('*');
-    if(operation === '/' )
-       await  this.operator.sendKeys('+');
-
-    console.log('operator is: '+operation);
-    //browser.sleep(10000);
-}
-
-clickOnGoButton(){
-    this.goButton.click();
-}
-
- loadPage(){
-    browser.get(this.url);
-    browser.waitForAngular();
+       await  this.operator.sendKeys(operation).then(()=>{
+        console.log('operator is: '+operation);
+       });
 
 }
 
+async clickOnGoButton(){
+    await this.goButton.click();
+}
+
+async loadPage(){
+    await browser.get(this.url).then(()=>{
+        console.log("Page is loaded: "+this.url);
+    });
+ 
+    await browser.waitForAngular();
+}
+
+async getResult(){
+    await this.result.getText().then((result)=>{
+        console.log("Result is: "+result); 
+    })
+}
 
 }

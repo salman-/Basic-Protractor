@@ -6,38 +6,31 @@ import { async } from 'q';
 let calc = new Calculator();
 
 
-  Given('I am in calculator website',  async ()=> {
+  Given('I am in calculator website', async ()=> {
 
       await calc.loadPage();
-      //browser.get('http://www.way2automation.com/angularjs-protractor/calc/');
-      // 
-
   });
-
 
 
   Given('I choose the operator as {string}', async (string) => {
-      await calc.selectOperator("+");
-     //return 'pending';
+       await calc.selectOperator("/");
   });
 
 
 
-  Given('I choose the operands as {string} and {string}', /*async*/ (string, string2) => {
+  Given('I choose the operands as {string} and {string}', async (string, string2) => {
     
-    // await calc.fillOperands('3' ,'6');
-    return 'pending';
+     await calc.fillOperands('3' ,'6');
+
   });
 
 
 
-  When('I click on Go', function () {
-    // Write code here that turns the phrase above into concrete actions
-    return 'pending';
+  When('I click on Go', async () => {
+      await calc.clickOnGoButton();
   });
 
 
-  Then('I get the result as {string}', function (string) {
-    // Write code here that turns the phrase above into concrete actions
-    return 'pending';
+  Then('I get the result as {string}', async (string) => {
+    await calc.getResult();
   });
