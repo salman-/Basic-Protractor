@@ -2,10 +2,11 @@
 
 This is a very basic protractor test for [Calculator page](http://www.way2automation.com/angularjs-protractor/calc/). The test generates a HTML report in the `report` folder. In case the test fails, an screenshot of the view is added to the report.
 
+---
 #### How to run?
 1. `npm install`
 2. `npm run test`
-
+---
 #### Technologies
 
 Technology  | Stack
@@ -17,6 +18,7 @@ Test framework  | Chai
 Reporting | [cucumber-html-reporter](https://www.npmjs.com/package/cucumber-html-reporter)
 IDE | Visual Studio Code
 
+---
 #### How do the Hooks work?
 
 ```{Typescript}
