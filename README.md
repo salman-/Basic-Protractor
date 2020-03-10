@@ -1,6 +1,8 @@
 # Basic-Protractor
 
-This is a very basic protractor test for [Calculator page](http://www.way2automation.com/angularjs-protractor/calc/). The test generates a HTML report in the `report` folder. In case the test fails, an screenshot of the view is added to the report.
+This is a very basic protractor test for [Calculator page](http://www.way2automation.com/angularjs-protractor/calc/). The test generates a HTML report in the `report` folder. In case the test fails, an screenshot of the view is added to the report. The below image is a sample of report.
+
+![Sample HTML Report](https://user-images.githubusercontent.com/4312244/76340213-81aaf700-62fb-11ea-8bc8-9332a346a2f6.png)
 
 ---
 #### How to run?
