@@ -1,5 +1,7 @@
 # Basic-Protractor
 
+This is a very basic protractor test for [Calculator page](http://www.way2automation.com/angularjs-protractor/calc/)
+
 #### How to run?
 1. `npm install`
 2. `npm run test`
