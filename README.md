@@ -5,7 +5,8 @@ This is a very basic protractor test for [Calculator page](http://www.way2automa
 ---
 #### How to run?
 1. `npm install`
-2. `npm run test`
+2. `npm run webdriver-update`
+3. `npm run test`
 ---
 #### Technologies
 
@@ -29,7 +30,7 @@ BeforeAll( async () => {
     await browser.manage().window().maximize();
   });
 
-After(async function(scenario) {
+After(async function(scenario) {                  // If the scenario fails then take a screenshot 
 
     console.log("Test is completed");
     if (scenario.result.status=== Status.FAILED)
